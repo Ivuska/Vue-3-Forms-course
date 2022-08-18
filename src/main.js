@@ -11,6 +11,7 @@ const requireComponent = require.context(
 
 const app = createApp(App)
 
+// This allows automatic component registration.
 requireComponent.keys().forEach(fileName => {
   const componentConfig = requireComponent(fileName)
 
