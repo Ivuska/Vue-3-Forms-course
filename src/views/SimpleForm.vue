@@ -7,25 +7,29 @@
         v-model="event.category"
         label="Select a category"/>
 
-      <h3>Name & describe your event</h3>
+    <fieldset>
+      <legend>Name & describe your event</legend>
 
       <BaseInput v-model="event.title"
       label="Title"
-      type="text"/>
+      type="text"
+      error="This input has an error!"/>
 
       <BaseInput v-model="event.description"
       label="Description"
       type="text"/>
+    </fieldset>
 
-      <h3>Where is your event?</h3>
+    <fieldset>
+      <legend>Where is your event?</legend>
 
       <BaseInput v-model="event.location"
       label="Location"
       type="text"/>
+    </fieldset>
 
-      {{ event }}
-
-      <h3>Are pets allowed?</h3>
+    <fieldset>
+      <legend>Are pets allowed?</legend>
 
       <div>
         <BaseRadioGroup
@@ -34,8 +38,10 @@
         name="pets"
         :options="petOptions"/>
       </div>
+    </fieldset>
 
-      <h3>Extras</h3>
+    <fieldset>
+      <legend>Extras</legend>
       <div>
         <BaseCheckbox
           v-model="event.extras.catering"
@@ -47,6 +53,7 @@
           v-model="event.extras.music"
           label="Live music" />
       </div>
+    </fieldset>
 
       <button class="button -fill-gradient" type="submit">Submit</button>
     </form>
@@ -107,3 +114,17 @@ export default {
   components: { BaseInput, BaseSelect, BaseCheckbox, BaseRadioGroup }
 }
 </script>
+
+<style scoped>
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  legend {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+</style>
