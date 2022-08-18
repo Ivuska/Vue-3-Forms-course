@@ -48,21 +48,15 @@
 
       <h3>Extras</h3>
       <div>
-        <input
-          type="checkbox"
+        <BaseCheckbox
           v-model="event.extras.catering"
-          class="field"
-        />
-        <label>Catering</label>
+          label="Catering" />
       </div>
 
       <div>
-        <input
-          type="checkbox"
+        <BaseCheckbox
           v-model="event.extras.music"
-          class="field"
-        />
-        <label>Live music</label>
+          label="Live music" />
       </div>
 
       <button class="button -fill-gradient" type="submit">Submit</button>
@@ -73,6 +67,7 @@
 <script>
 import BaseInput from '../components/BaseInput.vue'
 import BaseSelect from '../components/BaseSelect.vue'
+import BaseCheckbox from '../components/BaseCheckbox.vue'
 
 export default {
   data () {
@@ -99,6 +94,6 @@ export default {
       }
     }
   },
-  components: { BaseInput, BaseSelect }
+  components: { BaseInput, BaseSelect, BaseCheckbox }
 }
 </script>
